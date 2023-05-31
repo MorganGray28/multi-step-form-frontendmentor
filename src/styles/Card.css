@@ -1,7 +1,64 @@
 .Card {
+  display: flex;
   background-color: var(--clr-white);
-  width: 1000px;
-  height: 650px;
+  padding: 1rem;
+  height: 620px;
   border-radius: 1rem;
-  box-shadow: 0px 8px 25px hsla(213, 96%, 18%, 0.08);;
+  box-shadow: 0px 8px 25px hsla(213, 96%, 18%, 0.05);
+}
+
+.card-sidebar {
+  width: 300px;
+  background: url('../assets/bg-sidebar-desktop.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+/* Styling for sidebar step Overview */
+.sidebar-flex-container {
+  margin: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.step-number-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: var(--fw-medium);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--clr-white);
+  margin-right: 1rem;
+}
+
+.step-active {
+  color: var(--clr-marine-blue);
+  background-color: var(--clr-light-blue);
+}
+
+.step-content-container {
+  text-transform: uppercase;
+}
+
+.step-content-number {
+  font-size: .825rem;
+  color: var(--clr-cool-gray);
+}
+
+.step-content-category {
+  color: var(--clr-white);
+  font-weight: var(--fw-medium);
+  letter-spacing: 1px;
+  font-size: .9rem;
+}
+
+
+
+
+.card-content-container {
+  width: 675px;
+  /* background-color: aquamarine; */
+
 }
