@@ -1,6 +1,7 @@
 :root {
   /* colors */
   --clr-marine-blue: hsl(213, 96%, 18%);
+  --clr-marine-blue-lighter: hsl(213, 94%, 33%);
   --clr-purplish-blue: hsl(243, 100%, 62%);
   --clr-pastel-blue: hsl(228, 100%, 84%);
   --clr-light-blue: hsl(206, 94%, 87%);
