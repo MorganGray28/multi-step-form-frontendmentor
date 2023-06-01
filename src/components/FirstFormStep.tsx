@@ -70,7 +70,7 @@ function FirstFormStep({ goToNextStep, updatePersonalInfo }: PropsType) {
 						<p className='error-msg'>{nameError && nameError}</p>
 					</div>
 					<input
-						className='input-text'
+						className={nameError ? 'input-text error' : 'input-text'}
 						type='text'
 						id='name'
 						name='name'
@@ -88,7 +88,7 @@ function FirstFormStep({ goToNextStep, updatePersonalInfo }: PropsType) {
 						<p className='error-msg'>{emailError && emailError}</p>
 					</div>
 					<input
-						className='input-text'
+						className={emailError ? 'input-text error' : 'input-text'}
 						type='text'
 						id='email'
 						name='email'
@@ -106,7 +106,7 @@ function FirstFormStep({ goToNextStep, updatePersonalInfo }: PropsType) {
 						<p className='error-msg'>{phoneError && phoneError}</p>
 					</div>
 					<input
-						className='input-text'
+						className={phoneError ? 'input-text error' : 'input-text'}
 						type='text'
 						id='phone'
 						name='phone'

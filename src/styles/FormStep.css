@@ -36,11 +36,6 @@ label {
   font-weight: var(--fw-bold);
 }
 
-.error {
-  border: 1px solid var(--clr-strawberry-red);
-  color: var(--clr-strawberry-red);
-}
-
 .input-text {
   padding: .5rem;
   width: 100%;
@@ -56,6 +51,18 @@ label {
 .input-text:focus {
   outline: 1px solid var(--clr-purplish-blue);
   caret-color: var(--clr-purplish-blue);
+}
+
+.error {
+  border: 1px solid var(--clr-strawberry-red);
+  color: var(--clr-strawberry-red);
+  outline: 1px solid var(--clr-strawberry-red);
+}
+
+.error:active,
+.error:hover,
+.error:focus {
+  outline: 1px solid var(--clr-strawberry-red);
 }
 
 .btn-container {
