@@ -76,8 +76,14 @@
   width: 31%;
   padding: 1rem;
   border: 1px solid var(--clr-light-gray);
-  border-radius: .5rem;
+  border-radius: 1rem;
   transition: border 200ms ease;
+  cursor: pointer;
+}
+
+.plan-option-selected {
+  background-color: var(--clr-alabaster);
+  border: 1px solid var(--clr-purplish-blue);
 }
 
 .plan-option:hover,
@@ -112,10 +118,12 @@
   font-weight: var(--fw-medium);
   color: var(--clr-cool-gray);
   transition: color 300ms ease;
+  cursor: pointer;
 }
 
 .payment-selected {
   color: var(--clr-marine-blue);
+  cursor: auto;
 }
 
 #switch {
@@ -154,6 +162,7 @@
 
 button {
   font-size: .825rem;
+  cursor: pointer;
 }
 
 .btn-back {

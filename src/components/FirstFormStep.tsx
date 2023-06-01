@@ -7,6 +7,7 @@ type PropsType = {
 	updatePersonalInfo: (info: PersonalInfo) => void;
 };
 
+// TODO: move state to Card component and render the data as props
 function FirstFormStep({ goToNextStep, updatePersonalInfo }: PropsType) {
 	const [name, setName] = useState('');
 	const [email, setEmail] = useState('');
