@@ -3,9 +3,10 @@ import { PersonalInfo } from '../types';
 import '../styles/Card.css';
 import Sidebar from './Sidebar';
 import FirstFormStep from './FirstFormStep';
+import SecondFormStep from './SecondFormStep';
 
 function Card() {
-	const [activeStep, setActiveStep] = useState(0);
+	const [activeStep, setActiveStep] = useState(1);
 	const [personalInfo, setPersonalInfo] = useState({
 		name: '',
 		email: '',
@@ -20,12 +21,17 @@ function Card() {
 		setPersonalInfo(info);
 	}
 
+	let formStep;
+	if (activeStep === 0) {
+		formStep = <FirstFormStep goToNextStep={goToNextStep} updatePersonalInfo={updatePersonalInfo} />;
+	} else if (activeStep === 1) {
+		formStep = <SecondFormStep goToNextStep={goToNextStep} />;
+	}
+
 	return (
 		<div className='Card'>
 			<Sidebar activeStep={activeStep} />
-			<div className='card-content-container'>
-				<FirstFormStep goToNextStep={goToNextStep} updatePersonalInfo={updatePersonalInfo} />
-			</div>
+			<div className='card-content-container'>{formStep}</div>
 		</div>
 	);
 }

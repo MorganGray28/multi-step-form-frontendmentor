@@ -120,7 +120,9 @@ function FirstFormStep({ goToNextStep, updatePersonalInfo }: PropsType) {
 				</div>
 			</form>
 			<div className='btn-container'>
-				<button onClick={handleSubmit}>Next Step</button>
+				<button className='btn-next' onClick={handleSubmit}>
+					Next Step
+				</button>
 			</div>
 		</div>
 	);

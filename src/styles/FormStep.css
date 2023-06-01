@@ -25,7 +25,7 @@
   justify-content: space-between;
 }
 
-label {
+.label-group label {
   display: block;
   margin-bottom: .5rem;
 }
@@ -65,29 +65,136 @@ label {
   outline: 1px solid var(--clr-strawberry-red);
 }
 
-.btn-container {
-  /* position: relative; */
+/* Second Form Step */
+.plans-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.plan-option {
+  width: 31%;
+  padding: 1rem;
+  border: 1px solid var(--clr-light-gray);
+  border-radius: .5rem;
+  transition: border 200ms ease;
+}
+
+.plan-option:hover,
+.plan-option:focus {
+  outline: none;
+  border: 1px solid var(--clr-purplish-blue);
+}
+
+.plan-option-name {
+  color: var(--clr-marine-blue);
+  font-weight: var(--fw-medium);
+}
+
+.plan-option-subtext {
+  font-size: .825rem;
+  color: var(--clr-cool-gray);
+}
+
+.plan-option-icon {
+  margin-bottom: 3rem;
+}
+
+.payment-container {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  border-radius: .5rem;
+  background-color: var(--clr-gray);
+}
+
+.payment-option {
+  font-weight: var(--fw-medium);
+  color: var(--clr-cool-gray);
+  transition: color 300ms ease;
+}
+
+.payment-selected {
+  color: var(--clr-marine-blue);
+}
+
+#switch {
+  width: 0px;
+  height: 0px;
+  visibility: hidden;
+}
+
+.switch-toggle {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  display: block;
+  margin: 0 1rem;
+  border-radius: 30px;
+  background-color: var(--clr-marine-blue);
+  text-indent: -99999px;
+  cursor: pointer;
+}
+
+.switch-toggle:after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  top: 3px;
+  left: 4px;
+  border-radius: 25px;
+  background-color: white;
+  transition: all 200ms ease;
+}
+
+#switch:checked + .switch-toggle:after {
+  left: 22px;
 }
 
 button {
+  font-size: .825rem;
+}
+
+.btn-back {
+  background: none;
   position: absolute;
+  bottom: 1.5rem;
+  left: 6rem;
+  padding: .5rem 1rem;
+  border-radius: .5rem;
+  color: var(--clr-cool-gray);
+  transition: color 200ms ease;
+  font-weight: var(--fw-bold);
+}
+
+.btn-back:hover,
+.btn-back:focus {
+  color: var(--clr-marine-blue)
+}
+
+.btn-back:focus {
+  outline: 1px solid var(--clr-purplish-blue);
+}
+
+.btn-next {
+  position: absolute;
+  font-weight: var(--fw-medium);
   bottom: 1rem;
   right: 6rem;
   color: var(--clr-magnolia);
   background-color: var(--clr-marine-blue);
-  padding: .5rem 1rem;
+  padding: 1rem 2rem;
   border-radius: .5rem;
-  font-size: .825rem;
   transition: background-color 200ms ease;
 }
 
-button:hover,
-button:focus {
+.btn-next:hover,
+.btn-next:focus {
   background-color: var(--clr-marine-blue-lighter);
   color: var(--clr-white);
 }
 
-button:focus {
+.btn-next:focus {
   outline: none;
-
 }
