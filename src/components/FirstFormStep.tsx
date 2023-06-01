@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { PersonalInfo } from '../types';
 import '../styles/FormStep.css';
 

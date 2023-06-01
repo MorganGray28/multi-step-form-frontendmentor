@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import arcadeIcon from '../assets/icon-arcade.svg';
 import advancedIcon from '../assets/icon-advanced.svg';
 import proIcon from '../assets/icon-pro.svg';
@@ -31,33 +31,36 @@ function SecondFormStep({ goToNextStep, goBack }: PropsType) {
 			<p className='step-subheader'>You have the option of monthly or yearly billing.</p>
 
 			<div className='plans-container'>
-				<div
+				<button
 					className={planName === 'arcade' ? 'plan-option plan-option-selected' : 'plan-option'}
 					onClick={() => setPlanName('arcade')}
 					tabIndex={0}
 				>
 					<img src={arcadeIcon} alt='arcade game screen' className='plan-option-icon' />
 					<p className='plan-option-name'>Arcade</p>
-					<p className='plan-option-subtext'>$9/mo</p>
-				</div>
-				<div
+					<p className='plan-option-subtext'>{!checked ? '$9/mo' : '$90/yr'}</p>
+					{checked && <p className='annual-plan-subtext'>2 months free</p>}
+				</button>
+				<button
 					className={planName === 'advanced' ? 'plan-option plan-option-selected' : 'plan-option'}
 					onClick={() => setPlanName('advanced')}
 					tabIndex={0}
 				>
 					<img src={advancedIcon} alt='video game controller' className='plan-option-icon' />
 					<p className='plan-option-name'>Advanced</p>
-					<p className='plan-option-subtext'>$12/mo</p>
-				</div>
-				<div
+					<p className='plan-option-subtext'>{!checked ? '$12/mo' : '$120/yr'}</p>
+					{checked && <p className='annual-plan-subtext'>2 months free</p>}
+				</button>
+				<button
 					className={planName === 'pro' ? 'plan-option plan-option-selected' : 'plan-option'}
 					onClick={() => setPlanName('pro')}
 					tabIndex={0}
 				>
 					<img src={proIcon} alt='video game controller' className='plan-option-icon' />
 					<p className='plan-option-name'>Pro</p>
-					<p className='plan-option-subtext'>$15/mo</p>
-				</div>
+					<p className='plan-option-subtext'>{!checked ? '$15/mo' : '$150/yr'}</p>
+					{checked && <p className='annual-plan-subtext'>2 months free</p>}
+				</button>
 			</div>
 
 			<div className='payment-container'>
@@ -95,7 +98,7 @@ function SecondFormStep({ goToNextStep, goBack }: PropsType) {
 				<button className='btn-back' onClick={() => goBack()}>
 					Go Back
 				</button>
-				<button className='btn-next' onClick={() => goToNextStep()}>
+				<button className='btn-next' onClick={() => goToNextStep()} disabled={!planName}>
 					Next Step
 				</button>
 			</div>

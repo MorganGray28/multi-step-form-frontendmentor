@@ -73,8 +73,10 @@
 }
 
 .plan-option {
+  text-align: start;
   width: 31%;
   padding: 1rem;
+  background: none;
   border: 1px solid var(--clr-light-gray);
   border-radius: 1rem;
   transition: border 200ms ease;
@@ -100,6 +102,11 @@
 .plan-option-subtext {
   font-size: .825rem;
   color: var(--clr-cool-gray);
+}
+
+.annual-plan-subtext {
+  color: var(--clr-marine-blue);
+  font-size: .825rem;
 }
 
 .plan-option-icon {
@@ -160,10 +167,6 @@
   left: 22px;
 }
 
-button {
-  font-size: .825rem;
-  cursor: pointer;
-}
 
 .btn-back {
   background: none;
@@ -174,6 +177,7 @@ button {
   border-radius: .5rem;
   color: var(--clr-cool-gray);
   transition: color 200ms ease;
+  cursor: pointer;
   font-weight: var(--fw-bold);
 }
 
@@ -194,9 +198,11 @@ button {
   color: var(--clr-magnolia);
   background-color: var(--clr-marine-blue);
   padding: 1rem 2rem;
+  cursor: pointer;
   border-radius: .5rem;
   transition: background-color 200ms ease;
 }
+
 
 .btn-next:hover,
 .btn-next:focus {
@@ -206,4 +212,9 @@ button {
 
 .btn-next:focus {
   outline: none;
+}
+
+.btn-next:disabled {
+  background-color: var(--clr-button-disabled);
+  color: var(--clr-alabaster)
 }
