@@ -10,7 +10,7 @@ import FinalFormStep from './FinalFormStep';
 
 // TODO: move state from FirstFormStep to Card so we can pass it down as a prop to maintain state when going back;
 function Card() {
-	const [activeStep, setActiveStep] = useState(3);
+	const [activeStep, setActiveStep] = useState(0);
 	const [personalInfo, setPersonalInfo] = useState({
 		name: '',
 		email: '',
@@ -25,6 +25,10 @@ function Card() {
 		setActiveStep((prevStep) => prevStep - 1);
 	}
 
+	function changePlan() {
+		setActiveStep(1);
+	}
+
 	function updatePersonalInfo(info: PersonalInfo) {
 		setPersonalInfo(info);
 	}
@@ -37,7 +41,7 @@ function Card() {
 	} else if (activeStep === 2) {
 		formStep = <ThirdFormStep goToNextStep={goToNextStep} goBack={goBack} />;
 	} else if (activeStep === 3) {
-		formStep = <FourthFormStep goToNextStep={goToNextStep} goBack={goBack} />;
+		formStep = <FourthFormStep goToNextStep={goToNextStep} goBack={goBack} changePlan={changePlan} />;
 	} else if (activeStep === 4) {
 		formStep = <FinalFormStep goBack={goBack} />;
 	}

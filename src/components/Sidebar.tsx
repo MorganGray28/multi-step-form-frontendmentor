@@ -35,7 +35,13 @@ function Sidebar({ activeStep }: PropsType) {
 				</div>
 			</div>
 			<div className='sidebar-flex-container'>
-				<div className={activeStep === 3 ? 'step-number-container step-active' : 'step-number-container'}>
+				<div
+					className={
+						activeStep === 3 || activeStep === 4
+							? 'step-number-container step-active'
+							: 'step-number-container'
+					}
+				>
 					<p className='step-number'>4</p>
 				</div>
 				<div className='step-content-container'>

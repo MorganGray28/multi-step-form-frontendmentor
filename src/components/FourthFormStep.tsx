@@ -1,9 +1,10 @@
 type PropsType = {
 	goToNextStep: () => void;
 	goBack: () => void;
+	changePlan: () => void;
 };
 
-function FourthFormStep({ goToNextStep, goBack }: PropsType) {
+function FourthFormStep({ goToNextStep, goBack, changePlan }: PropsType) {
 	return (
 		<div className='FormStep'>
 			<h2 className='step-header'>Finishing up</h2>
@@ -13,7 +14,9 @@ function FourthFormStep({ goToNextStep, goBack }: PropsType) {
 				<div className='summary-plan-container'>
 					<div className='summary-plan-group'>
 						<p className='primary-med-text'>Arcade (Monthly)</p>
-						<p className='secondary-light-text change-plan'>Change</p>
+						<p className='secondary-light-text change-plan' onClick={changePlan}>
+							Change
+						</p>
 					</div>
 					<div className='primary-med-text plan-cost'>$9/mo</div>
 				</div>
