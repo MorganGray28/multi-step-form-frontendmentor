@@ -5,10 +5,11 @@ import Sidebar from './Sidebar';
 import FirstFormStep from './FirstFormStep';
 import SecondFormStep from './SecondFormStep';
 import ThirdFormStep from './ThirdFormStep';
+import FourthFormStep from './FourthFormStep';
 
 // TODO: move state from FirstFormStep to Card so we can pass it down as a prop to maintain state when going back;
 function Card() {
-	const [activeStep, setActiveStep] = useState(2);
+	const [activeStep, setActiveStep] = useState(3);
 	const [personalInfo, setPersonalInfo] = useState({
 		name: '',
 		email: '',
@@ -34,6 +35,8 @@ function Card() {
 		formStep = <SecondFormStep goToNextStep={goToNextStep} goBack={goBack} />;
 	} else if (activeStep === 2) {
 		formStep = <ThirdFormStep goToNextStep={goToNextStep} goBack={goBack} />;
+	} else if (activeStep === 3) {
+		formStep = <FourthFormStep goToNextStep={goToNextStep} goBack={goBack} />;
 	}
 
 	return (

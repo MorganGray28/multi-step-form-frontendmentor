@@ -1,8 +1,10 @@
+/* Variables */
 :root {
   /* colors */
   --clr-marine-blue: hsl(213, 96%, 18%);
   --clr-marine-blue-lighter: hsl(213, 94%, 33%);
   --clr-purplish-blue: hsl(243, 100%, 62%);
+  --clr-purplish-blue-lighter: hsl(243, 90%, 70%);
   --clr-pastel-blue: hsl(228, 100%, 84%);
   --clr-light-blue: hsl(206, 94%, 87%);
   --clr-strawberry-red: hsl(354, 84%, 57%);
@@ -23,6 +25,8 @@
   --fw-bold: 700;
 }
 
+
+/* CSS RESET */
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -53,4 +57,21 @@ input, button, textarea, select {
 
 button {
   border: none;
+}
+
+/* Common Classes */
+
+.primary-med-text {
+  font-size: 1rem;
+  color: var(--clr-marine-blue);
+  font-weight: var(--fw-medium);
+}
+
+.secondary-light-text {
+  color: var(--clr-cool-gray);
+  font-size: .825rem;
+}
+
+.primary-sm-text {
+  color: var(--clr-marine-blue)
 }

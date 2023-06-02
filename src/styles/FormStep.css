@@ -211,6 +211,47 @@
   border: 1px solid var(--clr-purplish-blue);
 }
 
+.summary-container {
+  padding: 1.5rem;
+  background-color: var(--clr-alabaster);
+}
+
+.summary-plan-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--clr-light-gray);
+  padding-bottom: 1rem;
+}
+
+.change-plan {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.summary-addon-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.summary-addon-container:last-child {
+  padding: 0;
+}
+
+.summary-total-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.total-cost {
+  color: var(--clr-purplish-blue);
+  font-weight: var(--fw-bold);
+  font-size: 1.125rem;
+}
+
 .btn-back {
   background: none;
   position: absolute;
@@ -260,4 +301,14 @@
 .btn-next:disabled {
   background-color: var(--clr-button-disabled);
   color: var(--clr-alabaster)
+}
+
+.btn-confirm {
+  background-color: var(--clr-purplish-blue);
+  color: var(--clr-white);
+}
+
+.btn-confirm:hover,
+.btn-confirm:focus {
+  background-color: var(--clr-purplish-blue-lighter);
 }
