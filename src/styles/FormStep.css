@@ -167,6 +167,49 @@
   left: 22px;
 }
 
+.addon-container {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid var(--clr-light-gray);
+  border-radius: .5rem;
+  margin-bottom: 1rem;
+}
+
+.addon-checkbox {
+  margin-right: 1rem;
+  width: 1rem;
+  height: 1rem;
+}
+
+.addon-checkbox:checked {
+  accent-color: var(--clr-purplish-blue);
+}
+
+.addon {
+  flex-grow: 1;
+}
+
+.addon-name {
+  color: var(--clr-marine-blue);
+  font-size: .9rem;
+  font-weight: var(--fw-medium);
+}
+
+.addon-description {
+  color: var(--clr-cool-gray);
+  font-size: .825rem;
+}
+
+.addon-cost {
+  color: var(--clr-purplish-blue);
+  font-size: .825rem;
+}
+
+.addon-selected {
+  background-color: var(--clr-alabaster);
+  border: 1px solid var(--clr-purplish-blue);
+}
 
 .btn-back {
   background: none;
