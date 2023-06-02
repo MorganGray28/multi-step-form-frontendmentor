@@ -252,6 +252,30 @@
   font-size: 1.125rem;
 }
 
+.final-step-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.final-step-container img {
+  margin-bottom: 2rem;
+  width: 4.5rem;
+  height: 4.5rem;
+}
+
+.confirmation-header {
+  color: var(--clr-marine-blue);
+  margin-bottom: 1rem;
+}
+
+.confirmation-subheader {
+  width: 100%;
+}
+
 .btn-back {
   background: none;
   position: absolute;

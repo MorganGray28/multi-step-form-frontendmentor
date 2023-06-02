@@ -6,6 +6,7 @@ import FirstFormStep from './FirstFormStep';
 import SecondFormStep from './SecondFormStep';
 import ThirdFormStep from './ThirdFormStep';
 import FourthFormStep from './FourthFormStep';
+import FinalFormStep from './FinalFormStep';
 
 // TODO: move state from FirstFormStep to Card so we can pass it down as a prop to maintain state when going back;
 function Card() {
@@ -37,6 +38,8 @@ function Card() {
 		formStep = <ThirdFormStep goToNextStep={goToNextStep} goBack={goBack} />;
 	} else if (activeStep === 3) {
 		formStep = <FourthFormStep goToNextStep={goToNextStep} goBack={goBack} />;
+	} else if (activeStep === 4) {
+		formStep = <FinalFormStep goBack={goBack} />;
 	}
 
 	return (
