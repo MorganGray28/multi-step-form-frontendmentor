@@ -1,18 +1,17 @@
 import { useState } from 'react';
-import { PersonalInfo } from '../types';
+import { UserData } from '../types';
 import '../styles/FormStep.css';
 
 type PropsType = {
+	name: string;
+	email: string;
+	phone: string;
 	goToNextStep: () => void;
-	updatePersonalInfo: (info: PersonalInfo) => void;
+	updateUserData: (e: React.FormEvent<HTMLInputElement>) => void;
 };
 
 // TODO: move state to Card component and render the data as props
-function FirstFormStep({ goToNextStep, updatePersonalInfo }: PropsType) {
-	const [name, setName] = useState('');
-	const [email, setEmail] = useState('');
-	const [phone, setPhone] = useState('');
-
+function FirstFormStep({ name, email, phone, goToNextStep, updateUserData }: PropsType) {
 	// error states
 	const [nameError, setNameError] = useState<string | null>(null);
 	const [emailError, setEmailError] = useState<string | null>(null);
@@ -41,7 +40,6 @@ function FirstFormStep({ goToNextStep, updatePersonalInfo }: PropsType) {
 
 		if (isValid) {
 			goToNextStep();
-			updatePersonalInfo({ name, email, phone });
 		}
 	}
 
@@ -77,7 +75,7 @@ function FirstFormStep({ goToNextStep, updatePersonalInfo }: PropsType) {
 						name='name'
 						value={name}
 						onChange={(e) => {
-							setName(e.target.value);
+							updateUserData(e);
 							setNameError(null);
 						}}
 						placeholder='e.g. Stephen King'
@@ -95,7 +93,7 @@ function FirstFormStep({ goToNextStep, updatePersonalInfo }: PropsType) {
 						name='email'
 						value={email}
 						onChange={(e) => {
-							setEmail(e.target.value);
+							updateUserData(e);
 							setEmailError(null);
 						}}
 						placeholder='e.g. stephenking@lorem.com'
@@ -113,7 +111,7 @@ function FirstFormStep({ goToNextStep, updatePersonalInfo }: PropsType) {
 						name='phone'
 						value={phone}
 						onChange={(e) => {
-							setPhone(e.target.value);
+							updateUserData(e);
 							setPhoneError(null);
 						}}
 						placeholder='e.g. +1 234 567 890'

@@ -1,66 +1,79 @@
-import { useState } from 'react';
 import '../styles/FormStep.css';
+import { AddonsType } from '../types';
 
 type PropsType = {
+	addons: AddonsType;
+	paymentSchedule: string;
+	updateAddons: (addonName: string) => void;
 	goToNextStep: () => void;
 	goBack: () => void;
 };
 
-function ThirdFormStep({ goToNextStep, goBack }: PropsType) {
-	const [onlineServices, setOnlineServices] = useState(false);
-	const [largerStorage, setLargerStorage] = useState(false);
-	const [customizableProfile, setCustomizableProfile] = useState(false);
-
+function ThirdFormStep({ addons, paymentSchedule, updateAddons, goToNextStep, goBack }: PropsType) {
 	return (
 		<div className='FormStep'>
 			<h2 className='step-header'>Pick add-ons</h2>
 			<p className='step-subheader'>Add-ons help enhance your gaming experience.</p>
-			<div className={onlineServices ? 'addon-container addon-selected' : 'addon-container'}>
+			<div className={addons.onlineServices.selected ? 'addon-container addon-selected' : 'addon-container'}>
 				<input
-					id='online-services'
-					name='online-services'
+					id='onlineServices'
+					name='onlineServices'
 					type='checkbox'
 					className='addon-checkbox'
-					checked={onlineServices}
-					onChange={() => setOnlineServices(!onlineServices)}
+					checked={addons.onlineServices.selected}
+					onChange={() => updateAddons('onlineServices')}
 				/>
 				<div className='addon'>
 					<p className='addon-name'>Online service</p>
 					<p className='addon-description'>Access to multiplayer games</p>
 				</div>
-				<p className='addon-cost'>+$1/mo</p>
+				<p className='addon-cost'>
+					{paymentSchedule === 'monthly'
+						? `+$${addons.onlineServices.cost[paymentSchedule]}/mo`
+						: `+$${addons.onlineServices.cost.yearly}/yr`}
+				</p>
 			</div>
 
-			<div className={largerStorage ? 'addon-container addon-selected' : 'addon-container'}>
+			<div className={addons.largerStorage.selected ? 'addon-container addon-selected' : 'addon-container'}>
 				<input
-					id='larger-storage'
-					name='larger-storage'
+					id='largerStorage'
+					name='largerStorage'
 					type='checkbox'
 					className='addon-checkbox'
-					checked={largerStorage}
-					onChange={() => setLargerStorage(!largerStorage)}
+					checked={addons.largerStorage.selected}
+					onChange={() => updateAddons('largerStorage')}
 				/>
 				<div className='addon'>
 					<p className='addon-name'>Larger storage</p>
 					<p className='addon-description'>Extra 1TB of cloud save</p>
 				</div>
-				<p className='addon-cost'>+$2/mo</p>
+				<p className='addon-cost'>
+					{paymentSchedule === 'monthly'
+						? `+$${addons.largerStorage.cost[paymentSchedule]}/mo`
+						: `+$${addons.largerStorage.cost.yearly}/yr`}
+				</p>
 			</div>
 
-			<div className={customizableProfile ? 'addon-container addon-selected' : 'addon-container'}>
+			<div
+				className={addons.customizableProfile.selected ? 'addon-container addon-selected' : 'addon-container'}
+			>
 				<input
-					id='customizable-profile'
-					name='customizable-profile'
+					id='customizableProfile'
+					name='customizableProfile'
 					type='checkbox'
 					className='addon-checkbox'
-					checked={customizableProfile}
-					onChange={() => setCustomizableProfile(!customizableProfile)}
+					checked={addons.customizableProfile.selected}
+					onChange={() => updateAddons('customizableProfile')}
 				/>
 				<div className='addon'>
 					<p className='addon-name'>Customizable Profile</p>
 					<p className='addon-description'>Custom theme on your profile</p>
 				</div>
-				<p className='addon-cost'>+$2/mo</p>
+				<p className='addon-cost'>
+					{paymentSchedule === 'monthly'
+						? `+$${addons.customizableProfile.cost[paymentSchedule]}/mo`
+						: `+$${addons.customizableProfile.cost.yearly}/yr`}
+				</p>
 			</div>
 
 			<button className='btn-back' onClick={goBack}>

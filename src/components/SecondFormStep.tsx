@@ -5,23 +5,27 @@ import proIcon from '../assets/icon-pro.svg';
 import '../styles/FormStep.css';
 
 type PropsType = {
+	selectedPlan: string;
+	paymentSchedule: string;
+	updatePaymentSchedule: (schedule: string) => void;
+	updatePlanName: (plan: string) => void;
 	goToNextStep: () => void;
 	goBack: () => void;
 };
 
-function SecondFormStep({ goToNextStep, goBack }: PropsType) {
-	const [planName, setPlanName] = useState<string | null>(null);
-	const [paymentSchedule, setPaymentSchedule] = useState<string>('monthly');
-	const [cost, setCost] = useState<string | null>(null);
-	const [checked, setChecked] = useState(false);
-
+function SecondFormStep({
+	selectedPlan,
+	paymentSchedule,
+	updatePaymentSchedule,
+	updatePlanName,
+	goToNextStep,
+	goBack,
+}: PropsType) {
 	function handleCheckbox() {
-		if (!checked) {
-			setChecked(true);
-			setPaymentSchedule('yearly');
-		} else {
-			setChecked(false);
-			setPaymentSchedule('monthly');
+		if (paymentSchedule === 'monthly') {
+			updatePaymentSchedule('yearly');
+		} else if (paymentSchedule === 'yearly') {
+			updatePaymentSchedule('monthly');
 		}
 	}
 
@@ -32,62 +36,53 @@ function SecondFormStep({ goToNextStep, goBack }: PropsType) {
 
 			<div className='plans-container'>
 				<button
-					className={planName === 'arcade' ? 'plan-option plan-option-selected' : 'plan-option'}
-					onClick={() => setPlanName('arcade')}
-					tabIndex={0}
+					className={selectedPlan === 'arcade' ? 'plan-option plan-option-selected' : 'plan-option'}
+					onClick={(e) => updatePlanName('arcade')}
 				>
 					<img src={arcadeIcon} alt='arcade game screen' className='plan-option-icon' />
 					<p className='plan-option-name'>Arcade</p>
-					<p className='plan-option-subtext'>{!checked ? '$9/mo' : '$90/yr'}</p>
-					{checked && <p className='annual-plan-subtext'>2 months free</p>}
+					<p className='plan-option-subtext'>{paymentSchedule === 'monthly' ? '$9/mo' : '$90/yr'}</p>
+					{paymentSchedule === 'yearly' && <p className='annual-plan-subtext'>2 months free</p>}
 				</button>
 				<button
-					className={planName === 'advanced' ? 'plan-option plan-option-selected' : 'plan-option'}
-					onClick={() => setPlanName('advanced')}
-					tabIndex={0}
+					className={selectedPlan === 'advanced' ? 'plan-option plan-option-selected' : 'plan-option'}
+					onClick={() => updatePlanName('advanced')}
 				>
 					<img src={advancedIcon} alt='video game controller' className='plan-option-icon' />
 					<p className='plan-option-name'>Advanced</p>
-					<p className='plan-option-subtext'>{!checked ? '$12/mo' : '$120/yr'}</p>
-					{checked && <p className='annual-plan-subtext'>2 months free</p>}
+					<p className='plan-option-subtext'>{paymentSchedule === 'monthly' ? '$12/mo' : '$120/yr'}</p>
+					{paymentSchedule === 'yearly' && <p className='annual-plan-subtext'>2 months free</p>}
 				</button>
 				<button
-					className={planName === 'pro' ? 'plan-option plan-option-selected' : 'plan-option'}
-					onClick={() => setPlanName('pro')}
-					tabIndex={0}
+					className={selectedPlan === 'pro' ? 'plan-option plan-option-selected' : 'plan-option'}
+					onClick={() => updatePlanName('pro')}
 				>
 					<img src={proIcon} alt='video game controller' className='plan-option-icon' />
 					<p className='plan-option-name'>Pro</p>
-					<p className='plan-option-subtext'>{!checked ? '$15/mo' : '$150/yr'}</p>
-					{checked && <p className='annual-plan-subtext'>2 months free</p>}
+					<p className='plan-option-subtext'>{paymentSchedule === 'monthly' ? '$15/mo' : '$150/yr'}</p>
+					{paymentSchedule === 'yearly' && <p className='annual-plan-subtext'>2 months free</p>}
 				</button>
 			</div>
 
 			<div className='payment-container'>
 				<p
-					className={!checked ? 'payment-option payment-selected' : 'payment-option'}
+					className={paymentSchedule === 'monthly' ? 'payment-option payment-selected' : 'payment-option'}
 					onClick={() => {
-						if (checked) {
-							setChecked(false);
-							setPaymentSchedule('monthly');
-						}
+						if (paymentSchedule === 'yearly') updatePaymentSchedule('monthly');
 					}}
 				>
 					Monthly
 				</p>
 
-				<input type='checkbox' id='switch' checked={checked} onChange={handleCheckbox} />
+				<input type='checkbox' id='switch' checked={paymentSchedule === 'yearly'} onChange={handleCheckbox} />
 				<label className='switch-toggle' htmlFor='switch'>
 					Toggle
 				</label>
 
 				<p
-					className={checked ? 'payment-option payment-selected' : 'payment-option'}
+					className={paymentSchedule === 'yearly' ? 'payment-option payment-selected' : 'payment-option'}
 					onClick={() => {
-						if (!checked) {
-							setChecked(true);
-							setPaymentSchedule('yearly');
-						}
+						if (paymentSchedule === 'monthly') updatePaymentSchedule('yearly');
 					}}
 				>
 					Yearly
@@ -98,7 +93,7 @@ function SecondFormStep({ goToNextStep, goBack }: PropsType) {
 				<button className='btn-back' onClick={() => goBack()}>
 					Go Back
 				</button>
-				<button className='btn-next' onClick={() => goToNextStep()} disabled={!planName}>
+				<button className='btn-next' onClick={() => goToNextStep()} disabled={!selectedPlan}>
 					Next Step
 				</button>
 			</div>
