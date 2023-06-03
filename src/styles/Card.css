@@ -54,11 +54,23 @@
   font-size: .9rem;
 }
 
-
-
-
 .card-content-container {
   width: 675px;
   /* background-color: aquamarine; */
 
+}
+
+@media (max-width: 1020px) {
+  .card-sidebar {
+    width: 200px;
+  
+  }
+
+  .card-content-container {
+    width: 450px;
+  }
+}
+
+@media (max-width: 700px) {
+  
 }
