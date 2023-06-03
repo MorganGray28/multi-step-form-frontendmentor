@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import arcadeIcon from '../assets/icon-arcade.svg';
 import advancedIcon from '../assets/icon-advanced.svg';
 import proIcon from '../assets/icon-pro.svg';
@@ -37,7 +36,7 @@ function SecondFormStep({
 			<div className='plans-container'>
 				<button
 					className={selectedPlan === 'arcade' ? 'plan-option plan-option-selected' : 'plan-option'}
-					onClick={(e) => updatePlanName('arcade')}
+					onClick={() => updatePlanName('arcade')}
 				>
 					<img src={arcadeIcon} alt='arcade game screen' className='plan-option-icon' />
 					<p className='plan-option-name'>Arcade</p>
