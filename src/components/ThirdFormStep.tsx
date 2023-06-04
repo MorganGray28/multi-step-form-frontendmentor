@@ -33,7 +33,6 @@ function ThirdFormStep({ addons, paymentSchedule, updateAddons, goToNextStep, go
 						: `+$${addons.onlineServices.cost.yearly}/yr`}
 				</p>
 			</div>
-
 			<div className={addons.largerStorage.selected ? 'addon-container addon-selected' : 'addon-container'}>
 				<input
 					id='largerStorage'
@@ -53,7 +52,6 @@ function ThirdFormStep({ addons, paymentSchedule, updateAddons, goToNextStep, go
 						: `+$${addons.largerStorage.cost.yearly}/yr`}
 				</p>
 			</div>
-
 			<div
 				className={addons.customizableProfile.selected ? 'addon-container addon-selected' : 'addon-container'}
 			>
@@ -76,12 +74,14 @@ function ThirdFormStep({ addons, paymentSchedule, updateAddons, goToNextStep, go
 				</p>
 			</div>
 
-			<button className='btn-back' onClick={goBack}>
-				Go Back
-			</button>
-			<button className='btn-next' onClick={goToNextStep}>
-				Next Step
-			</button>
+			<div className='btn-container'>
+				<button className='btn-back' onClick={goBack}>
+					Go Back
+				</button>
+				<button className='btn-next' onClick={goToNextStep}>
+					Next Step
+				</button>
+			</div>
 		</div>
 	);
 }

@@ -60,6 +60,11 @@
 
 }
 
+.sidebar-mobile {
+  display: none;
+  visibility: hidden;
+}
+
 @media (max-width: 1020px) {
   .card-sidebar {
     width: 200px;
@@ -72,5 +77,31 @@
 }
 
 @media (max-width: 700px) {
-  
+  .card-sidebar {
+    display: none;
+    visibility: hidden;
+  }
+
+  .sidebar-mobile {
+    display: block;
+    visibility: visible;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-size: contain;
+  }
+
+  .sidebar-mobile-background {
+    z-index: -9999;
+    width: 100%;
+  }
+
+  .Card {
+    position: absolute;
+    top: 8rem;
+    z-index: 9999;
+    width: 90%;
+    height: auto;
+  }
 }

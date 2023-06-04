@@ -116,12 +116,14 @@ function FourthFormStep({ planName, paymentSchedule, addons, goToNextStep, goBac
 				{/* <p className='total-cost'>+$12/mo</p> */}
 			</div>
 
-			<button className='btn-back' onClick={goBack}>
-				Go Back
-			</button>
-			<button className='btn-next btn-confirm' onClick={goToNextStep}>
-				Confirm
-			</button>
+			<div className='btn-container'>
+				<button className='btn-back' onClick={goBack}>
+					Go Back
+				</button>
+				<button className='btn-next btn-confirm' onClick={goToNextStep}>
+					Confirm
+				</button>
+			</div>
 		</div>
 	);
 }
