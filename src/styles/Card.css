@@ -77,31 +77,40 @@
 }
 
 @media (max-width: 700px) {
+  .Card {
+    position: absolute;
+    top: 6rem;
+    width: 90%;
+    height: auto;
+  }
+
   .card-sidebar {
+    z-index: -9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+  }
+
+  .card-sidebar {
+    background: url('../assets/bg-sidebar-mobile.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: flex-start;
+    padding-top: 2rem;
+  }
+
+  .step-content-container {
     display: none;
     visibility: hidden;
   }
 
-  .sidebar-mobile {
-    display: block;
-    visibility: visible;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-size: contain;
-  }
-
-  .sidebar-mobile-background {
-    z-index: -9999;
-    width: 100%;
-  }
-
-  .Card {
-    position: absolute;
-    top: 8rem;
-    z-index: 9999;
-    width: 90%;
-    height: auto;
+  .sidebar-flex-container {
+    margin: 0;
   }
 }
