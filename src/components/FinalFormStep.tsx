@@ -1,10 +1,6 @@
 import thankYouIcon from '../assets/icon-thank-you.svg';
 
-type PropsType = {
-	goBack: () => void;
-};
-
-function FinalFormStep({ goBack }: PropsType) {
+function FinalFormStep() {
 	return (
 		<div className='FormStep'>
 			<div className='final-step-container'>

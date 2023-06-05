@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { UserData } from '../types';
 import '../styles/FormStep.css';
 
 type PropsType = {

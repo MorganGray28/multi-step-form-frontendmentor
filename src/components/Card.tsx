@@ -114,7 +114,7 @@ function Card() {
 			/>
 		);
 	} else if (activeStep === 4) {
-		formStep = <FinalFormStep goBack={goBack} />;
+		formStep = <FinalFormStep />;
 	}
 
 	return (
