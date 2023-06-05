@@ -39,27 +39,33 @@ function SecondFormStep({
 					onClick={() => updatePlanName('arcade')}
 				>
 					<img src={arcadeIcon} alt='arcade game screen' className='plan-option-icon' />
-					<p className='plan-option-name'>Arcade</p>
-					<p className='plan-option-subtext'>{paymentSchedule === 'monthly' ? '$9/mo' : '$90/yr'}</p>
-					{paymentSchedule === 'yearly' && <p className='annual-plan-subtext'>2 months free</p>}
+					<div className='plan-option-flex'>
+						<p className='plan-option-name'>Arcade</p>
+						<p className='plan-option-subtext'>{paymentSchedule === 'monthly' ? '$9/mo' : '$90/yr'}</p>
+						{paymentSchedule === 'yearly' && <p className='annual-plan-subtext'>2 months free</p>}
+					</div>
 				</button>
 				<button
 					className={selectedPlan === 'advanced' ? 'plan-option plan-option-selected' : 'plan-option'}
 					onClick={() => updatePlanName('advanced')}
 				>
 					<img src={advancedIcon} alt='video game controller' className='plan-option-icon' />
-					<p className='plan-option-name'>Advanced</p>
-					<p className='plan-option-subtext'>{paymentSchedule === 'monthly' ? '$12/mo' : '$120/yr'}</p>
-					{paymentSchedule === 'yearly' && <p className='annual-plan-subtext'>2 months free</p>}
+					<div className='plan-option-flex'>
+						<p className='plan-option-name'>Advanced</p>
+						<p className='plan-option-subtext'>{paymentSchedule === 'monthly' ? '$12/mo' : '$120/yr'}</p>
+						{paymentSchedule === 'yearly' && <p className='annual-plan-subtext'>2 months free</p>}
+					</div>
 				</button>
 				<button
 					className={selectedPlan === 'pro' ? 'plan-option plan-option-selected' : 'plan-option'}
 					onClick={() => updatePlanName('pro')}
 				>
 					<img src={proIcon} alt='video game controller' className='plan-option-icon' />
-					<p className='plan-option-name'>Pro</p>
-					<p className='plan-option-subtext'>{paymentSchedule === 'monthly' ? '$15/mo' : '$150/yr'}</p>
-					{paymentSchedule === 'yearly' && <p className='annual-plan-subtext'>2 months free</p>}
+					<div className='plan-option-flex'>
+						<p className='plan-option-name'>Pro</p>
+						<p className='plan-option-subtext'>{paymentSchedule === 'monthly' ? '$15/mo' : '$150/yr'}</p>
+						{paymentSchedule === 'yearly' && <p className='annual-plan-subtext'>2 months free</p>}
+					</div>
 				</button>
 			</div>
 

@@ -1,5 +1,6 @@
 .Card {
   display: flex;
+  justify-content: center;
   background-color: var(--clr-white);
   padding: 1rem;
   height: 620px;
@@ -82,6 +83,7 @@
     top: 6rem;
     width: 90%;
     height: auto;
+    border-radius: .5rem;
   }
 
   .card-sidebar {

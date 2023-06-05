@@ -361,6 +361,48 @@
 
   .step-header {
     font-size: 1.5rem;
+    padding-bottom: 1rem;
+  }
+
+  .plans-container {
+    flex-direction: column;
+  }
+
+  .plan-option {
+    display: flex;
+    width: 100%;
+    border-radius: .5rem;
+    padding: .75rem;
+    margin-bottom: .75rem;
+  }
+
+  .plan-option-icon {
+    width: 2.25rem;
+    height: 2.25rem;
+    margin: 0 1rem 0 0;
+  }
+
+  .addon-container {
+    padding: .75rem;
+  }
+
+  .summary-total-container {
+    padding: 1rem 1rem 0 1rem;
+  }
+
+  .final-step-container img {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-top: 3.5rem;
+  }
+
+  .confirmation-subheader {
+    margin-bottom: 3.5rem;
+    width: 34ch;
+  }
+
+  .confirmation-header {
+    margin: 0;
   }
 
   .step-subheader {
@@ -368,8 +410,6 @@
   }
 
   .btn-container {
-    /* display: none;
-    visibility: hidden; */
     position: fixed;
     bottom: 0;
     right: 0;
