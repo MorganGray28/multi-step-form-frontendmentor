@@ -10,7 +10,7 @@ import FinalFormStep from './FinalFormStep';
 
 // TODO: move state from FirstFormStep to Card so we can pass it down as a prop to maintain state when going back;
 function Card() {
-	const [activeStep, setActiveStep] = useState(1);
+	const [activeStep, setActiveStep] = useState(0);
 	const [userData, setUserData] = useState({
 		name: '',
 		email: '',
